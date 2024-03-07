@@ -16,46 +16,28 @@ body {
   font-family: Calibri, sans-serif;
 }
 
-.inline {
-  display: inline;
-}
-
-.inline-block {
-  display: inline-block;
+#header {
+  display: flex;
 }
 
 #title {
-  font-size: 44px;
+  background-color: rgb(17, 17, 17);
+  /*background-color: rgb(30, 30, 30);*/
+  font-size: 40px;
   padding-left: 20px;
   padding-right: 40px;
+  border-top: 3px solid purple;
+  border-right: 15px solid purple;
+  border-bottom: 3px solid purple;
 }
 
-.navigation-list {
-  flex-direction: row;
-
-  margin: 5px;
-  border-top-color: rgb(17, 17, 17);
-  border-bottom-color: rgb(17, 17, 17);
-
-  list-style: none;
-}
-
-.link-list {
-  background-color: rgb(143, 113, 196);
-
-  border: 1px solid rgb(17, 17, 17);
-  border-top-color: rgb(17, 17, 17);
-  border-bottom-color: rgb(17, 17, 17);
-  border-top-width: 5px;
-  border-bottom-width: 5px;
-
-  padding-top: 12px;
-  padding-bottom: 12px;
-  list-style: none;
-  margin-left: auto;
+#navigation-list {
+  display: flex;
 }
 
 .buffer {
+  display: inline;
+  border: 3px solid rgb(17, 17, 17);
   border-top: 15px solid rgb(17, 17, 17);
   border-right: 3px solid rgb(17, 17, 17);
   border-bottom: 30px solid rgb(17, 17, 17);
@@ -63,27 +45,21 @@ body {
 }
 
 .filler {
-  border: 3px solid rgb(17, 17, 17);
   background-color: rgb(143, 113, 196);
   flex-grow: 1;
+}
+
+.piped,
+.link,
+.filler {
   border-top: 5px solid rgb(17, 17, 17);
   border-right: 15px solid purple;
   border-left: 15px solid purple;
   border-bottom: 5px solid rgb(17, 17, 17);
-  margin-top: 2px;
-  height: 54px;
-}
-
-.flex {
-  display: flex;
 }
 
 .link {
-  border: 3px solid rgb(17, 17, 17);
-  border-top: 5px solid rgb(17, 17, 17);
-  border-right: 15px solid purple;
-  border-bottom: 5px solid rgb(17, 17, 17);
-  border-left: 15px solid purple;
+  background-color: rgb(143, 113, 196);
   padding: 10px;
   font-weight: bold;
   font-size: 20px;
