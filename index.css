@@ -1,16 +1,100 @@
+/*
+  padding: space between box and internal content
+  border: space between the margin and the padding
+  margin: space between box border and other box border
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   color: white;
   background-color: rgb(17, 17, 17);
   font-family: Calibri, sans-serif;
 }
 
-.links {
-  color: white;
-  background-color: rgb(143, 113, 196);
-  font-size: large;
+.inline {
+  display: inline;
 }
 
-img {
-  height: auto;
-  width: 300px;
+.inline-block {
+  display: inline-block;
+}
+
+#title {
+  font-size: 44px;
+  padding-left: 20px;
+  padding-right: 40px;
+}
+
+.navigation-list {
+  flex-direction: row;
+
+  margin: 5px;
+  border-top-color: rgb(17, 17, 17);
+  border-bottom-color: rgb(17, 17, 17);
+
+  list-style: none;
+}
+
+.link-list {
+  background-color: rgb(143, 113, 196);
+
+  border: 1px solid rgb(17, 17, 17);
+  border-top-color: rgb(17, 17, 17);
+  border-bottom-color: rgb(17, 17, 17);
+  border-top-width: 5px;
+  border-bottom-width: 5px;
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+  list-style: none;
+  margin-left: auto;
+}
+
+.buffer {
+  border-top: 15px solid rgb(17, 17, 17);
+  border-right: 3px solid rgb(17, 17, 17);
+  border-bottom: 30px solid rgb(17, 17, 17);
+  border-left: 3px solid rgb(17, 17, 17);
+}
+
+.filler {
+  border: 3px solid rgb(17, 17, 17);
+  background-color: rgb(143, 113, 196);
+  flex-grow: 1;
+  border-top: 5px solid rgb(17, 17, 17);
+  border-right: 15px solid purple;
+  border-left: 15px solid purple;
+  border-bottom: 5px solid rgb(17, 17, 17);
+  margin-top: 2px;
+  height: 54px;
+}
+
+.flex {
+  display: flex;
+}
+
+.link {
+  border: 3px solid rgb(17, 17, 17);
+  border-top: 5px solid rgb(17, 17, 17);
+  border-right: 15px solid purple;
+  border-bottom: 5px solid rgb(17, 17, 17);
+  border-left: 15px solid purple;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+.link:hover {
+  background-color: rgb(17, 17, 17);
+  border-top-color: purple;
+  border-right-color: rgb(17, 17, 17);
+  border-bottom-color: purple;
+  border-left-color: rgb(17, 17, 17);
 }
