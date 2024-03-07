@@ -4,14 +4,34 @@
 <head>
   <meta charset="utf-8">
   <title>Portfolio</title>
+  <link rel="stylesheet" href="index.css">
+  <style>
+  </style>
 </head>
 
 <!-- Bold = <strong>, Italic = <em> -->
 <!-- Do not use <b> and <i> -->
+<!-- attributes: 
+      - href="" opens a link in the same page
+      - target="" opens a link in a new page - often times using target="_blank"
+        - if using target="_blank" use the ref="noopener noreferrer" attribute for security (prevents phishing/tabnabbing)
+-->
 
 <body>
-  <h1>My Portfolio</h1>
-  <a href="./pages/about.html">About Me</a>
+  <div class="header">
+    <h1>My Portfolio</h1>
+  </div>
+  <div class="links">
+    <a href="./pages/about.html">
+      About
+    </a>
+    <a href="https://www.github.com/JoshBenn" target="_blank" ref="noopender noreferrer">
+      GitHub
+    </a>
+    <a href="https://www.linkedin.com/in/joshua-benn/" target="_blank" ref="noopener noreferrer">
+      LinkedIn
+    </a>
+  </div>
 
   <!-- Section regarding projects I've worked on or am working on -->
   <h2>Projects</h2>

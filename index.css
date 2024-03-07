@@ -1,4 +1,16 @@
 body {
-  background-color: black;
   color: white;
+  background-color: rgb(17, 17, 17);
+  font-family: Calibri, sans-serif;
+}
+
+.links {
+  color: white;
+  background-color: rgb(143, 113, 196);
+  font-size: large;
+}
+
+img {
+  height: auto;
+  width: 300px;
 }
