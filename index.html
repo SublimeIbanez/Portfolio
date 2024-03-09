@@ -5,17 +5,33 @@
   <meta charset="utf-8">
   <title>Portfolio</title>
   <link rel="stylesheet" href="index.css">
-  <style>
-  </style>
+  <script src="index.js"></script>
 </head>
 
-<body>
+<body class="color-mode">
   <div id="header">
-    <p id="title" class="inline-block">Joshua Benn</p>
+    <!-- Title -->
+    <a class="title" href="#">Joshua Benn</a>
 
-    <div class="filler"></div>
+    <!-- Center -->
+    <div class="header-bar-left color-mode"></div>
+    <div class="header-bar">
+      <div class="header-bar-mid">
+        <!-- Header: Top Bar -->
+        <div class="header-bar-top">
+          <img id="mode-selector" src="./images/lightbulb-solid.png" alt="Change Modes" onclick="changeMode()">
+        </div>
+        <!-- Header: Bottom Bar -->
+        <div class="header-bar-bottom color-mode">
+          <span><a class="page-nav" href="#about">About</a></span>
+          <span><a class="page-nav" href="#experience">Experience</a></span>
+          <span><a class="page-nav" href="#projects">Projects</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="header-bar-right color-mode"></div>
 
-    <div id="navigation-list">
+    <div class="link-tray">
       <!-- GitHub Section -->
       <a href="https://www.github.com/JoshBenn" target="_blank" ref="noopender noreferrer" class="link">
         <img id="github" src="./images/github-mark-white.png" alt="GitHub Logo">
@@ -25,7 +41,6 @@
       <a href="https://www.linkedin.com/in/joshua-benn/" target="_blank" ref="noopener noreferrer" class="link">
         <img id="linkedin" src="./images/linkedin.svg" alt="LinkedIn Logo">
       </a>
-      <div class="buffer"></div>
     </div>
   </div>
 

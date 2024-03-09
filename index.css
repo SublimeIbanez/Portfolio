@@ -2,52 +2,91 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-body {
   color: white;
-  background-color: rgb(17, 17, 17);
   font-family: sans-serif;
 }
 
-#header {
-  display: flex;
-  flex-wrap: wrap;
+body {
+  flex-direction: column;
 }
 
-#title {
+body,
+#header,
+.header-bar,
+.header-bar-mid,
+.header-bar-top,
+.header-bar-bottom,
+.link-tray {
+  display: flex;
+}
+
+.header-bar,
+.header-bar-mid,
+.header-bar-top,
+.header-bar-bottom {
+  flex: 1;
+}
+
+.title {
+  background-color: #171717;
   font-size: 40px;
-  padding-left: 20px;
-  padding-right: 40px;
-  border-top: 3px solid purple;
-  border-right: 15px solid purple;
-  border-bottom: 3px solid purple;
+  padding: 0 40px 0 20px;
+  border-top: 3px solid #2f2e35;
+  border-bottom: 3px solid #171717;
+  text-decoration: none;
 }
 
-#navigation-list {
-  display: flex;
-  border-top: 3px solid purple;
+.header-bar-left {
+  border-left: 15px solid #2f2e35;
+  border-bottom: 30px solid #171717;
 }
 
-.filler {
-  border-left: 15px solid purple;
-  border-right: 15px solid purple;
-  border-bottom: 30px solid rgb(17, 17, 17);
-  background-color: rgb(143, 113, 196);
-  flex-grow: 1;
+.header-bar {
+  background-color: #ba93ff;
+}
+
+.header-bar-mid {
+  flex-direction: column;
+}
+
+.header-bar-top {
+  justify-content: end;
+  align-items: center;
+}
+
+.header-bar-bottom {
+  background-color: #171717;
+  min-height: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-nav {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header-bar-right {
+  border-right: 15px solid #2f2e35;
+  border-bottom: 30px solid #171717;
+  flex-shrink: 0;
+}
+
+.link-tray {
+  border-top: 3px solid #2f2e35;
 }
 
 .link {
-  border-left: 5px solid rgb(17, 17, 17);
-  border-bottom: 5px solid rgb(17, 17, 17);
-  border-right: 5px solid rgb(17, 17, 17);
-  padding-top: 7px;
+  background-color: #171717;
+  border: 5px solid #171717;
+  padding-top: 2px;
   padding-left: 6px;
   padding-right: 6px;
 }
 
-.link:hover {
-  border-bottom-color: purple;
+.link:hover,
+.title:hover {
+  border-bottom-color: #2f2e35;
 }
 
 #github {
@@ -56,4 +95,9 @@ body {
 
 #linkedin {
   height: 30px;
+}
+
+#mode-selector {
+  margin-right: 10px;
+  height: 15px;
 }
