@@ -66,6 +66,7 @@ type ProjectProps = {
     title: string;
     role: string;
     body: ReactNode;
+    bullets?: string[];
     img?: string;
     skills?: string[];
     links?: LinkProps[];
