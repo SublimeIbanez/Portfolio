@@ -14,7 +14,7 @@ export default function Projects() {
                 title="ByteCrypt"
                 role="Core Contributor"
                 body="Lightweight application, developed in rust, that allows users to encrypt their local data and upload it to and through various cloud services."
-                skills={["Rust", "SQL", "Cryptography", "Go", "React", "JavaScript", "REST", ]}
+                skills={["Rust", "SQL", "Cryptography", "Go", "React", "Typescript", "REST",]}
                 links={[
                     {
                         site: Site.GitHub,
@@ -103,7 +103,7 @@ function SkillsList({ skills }: SkillProps) {
             {
                 skills?.map((skill) => {
                     return (
-                        <span className="rounded-full mr-1 pl-2 pr-2 text-sm font-bold bg-emerald-900 bg-opacity-70 text-green-300">{skill}</span>
+                        <span className="rounded-full mr-1 pl-2 pr-2 text-sm font-bold bg-emerald-900 bg-opacity-70 text-green-300 mt-1">{skill}</span>
                     )
                 })
             }

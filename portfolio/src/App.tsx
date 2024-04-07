@@ -8,7 +8,7 @@ import Experience from "./components/Experience";
 export default function App() {
 
     return (
-        <div className="App flex flex-col gap-10 m-4 text-lg md:flex-row">
+        <div className="App flex flex-col gap-10 m-4 text-lg lg:flex-row">
             <div className="header min-w-92 flex-none">
                 <Header />
             </div>

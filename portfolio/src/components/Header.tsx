@@ -3,12 +3,11 @@ import { useState } from "react";
 import { keepTheme, setTheme } from "./theme";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
-import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons/faLinkedinIn";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
-import Mode_Dark from "../images/dark_mode.svg";
-import Mode_Light from "../images/light_mode.svg";
+// import Mode_Dark from "../images/dark_mode.svg";
+// import Mode_Light from "../images/light_mode.svg";
 import Underline from "../images/header_slash.svg";
 
 
@@ -29,8 +28,7 @@ export default function Header() {
             </div>
             <div className="flex sm:flex-col justify-between">
                 <div className="social flex gap-3 mt-1">
-                    <img className="mt-1 h-[20px] w-auto" src={theme == "theme-dark" ? Mode_Light : Mode_Dark}
-                        alt="Mode Selection" onClick={toggleMode} />
+                    <FontAwesomeIcon icon={theme == "theme-dark" ? faSun : faMoon} onClick={toggleMode} className="mt-1" />
 
                     <a href="https://github.com/JoshBenn">
                         <FontAwesomeIcon icon={faGithub} />
