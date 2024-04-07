@@ -24,7 +24,7 @@ export default function Header() {
 
     return (
         <>
-            <div className="flex">
+            <div className="flex flex-col">
                 <a className="text-5xl min-w-full" href="#">
                     Joshua Benn
                 </a>
