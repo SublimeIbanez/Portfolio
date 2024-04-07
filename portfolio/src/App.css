@@ -3,12 +3,19 @@
 @tailwind utilities;
 
 * {
-  margin: 0;
-  padding: 0;  
-  box-sizing: border-box;
-  font-family: monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
 }
 
 .text_entry {
     font-family: sans-serif;
+}
+
+@media screen and (min-width: 500px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
 }
