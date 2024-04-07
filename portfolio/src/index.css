@@ -1,11 +1,11 @@
 :root {    
     --bg_color: #171717;
-    --text_color: light;
+    --text_color: white;
     color-scheme: light dark;
     font-family: "monospace";
 }
 
-[data-theme="theme-light"] {
+[data-theme="light"] {
     --bg_color: #FFFFFF;
     --text_color: black;
 }

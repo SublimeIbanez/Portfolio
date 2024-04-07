@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { keepTheme, setTheme } from "./theme";
 
@@ -14,8 +14,12 @@ import Underline from "../images/header_slash.svg";
 export default function Header() {
     const [theme, setMode] = useState(keepTheme);
 
+    useEffect(() => {
+        setTheme({ themeName: theme == "dark" ? "dark" : "light", setThemeName: setMode });
+    }, []);
+
     const toggleMode = () => {
-        setTheme({ themeName: theme == "theme-dark" ? "theme-light" : "theme-dark", setThemeName: setMode });
+        setTheme({ themeName: theme == "dark" ? "light" : "dark", setThemeName: setMode });
     };
 
     return (
@@ -28,7 +32,7 @@ export default function Header() {
             </div>
             <div className="flex sm:flex-col justify-between">
                 <div className="social flex gap-3 mt-1">
-                    <img className="mt-1 h-[20px] w-auto" src={theme == "theme-dark" ? Mode_Light : Mode_Dark}
+                    <img className="mt-1 h-[20px] w-auto" src={theme == "dark" ? Mode_Light : Mode_Dark}
                         alt="Mode Selection" onClick={toggleMode} />
 
                     <a href="https://github.com/JoshBenn">

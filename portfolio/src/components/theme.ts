@@ -24,7 +24,7 @@ export function keepTheme() {
     }
 
     const prefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
-    setTheme({themeName: prefersDarkTheme.matches ? "theme-dark" : "theme-light"});
+    setTheme({themeName: prefersDarkTheme.matches ? "dark" : "light"});
 
     return prefersDarkTheme;
 }
