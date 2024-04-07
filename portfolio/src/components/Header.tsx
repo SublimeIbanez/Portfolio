@@ -25,10 +25,12 @@ export default function Header() {
     return (
         <>
             <div className="flex flex-col">
-                <a className="text-5xl min-w-full" href="#">
+                <a className="text-5xl min-w-full -pr-4" href="#">
                     Joshua Benn
                 </a>
-                <img src={Underline} className="-mt-5 z-10 min-w-80 max-w-80" />
+                <div className="-mt-5 z-10 min-w-80 max-w-80">
+                    <img src={Underline} />
+                </div>
             </div>
             <div className="flex sm:flex-col justify-between">
                 <div className="social flex gap-3 mt-1">
