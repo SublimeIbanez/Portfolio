@@ -1,13 +1,13 @@
 :root {    
-    --bg_color: #FFFFFF;
-    --text_color: black;
+    --bg_color: #171717;
+    --text_color: light;
     color-scheme: light dark;
     font-family: "monospace";
 }
 
-[data-theme="theme-dark"] {
-    --bg_color: #171717;
-    --text_color: white;
+[data-theme="theme-light"] {
+    --bg_color: #FFFFFF;
+    --text_color: black;
 }
 
 body {
