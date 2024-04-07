@@ -24,10 +24,10 @@ export default function Header() {
 
     return (
         <>
-            <img src={Underline} className="-mb-12 mt-10 z-10 min-w-80" />
             <div className="flex">
                 <a className="text-5xl min-w-full" href="#">
                     Joshua Benn
+                    <img src={Underline} className="-mt-4 z-10" />
                 </a>
             </div>
             <div className="flex sm:flex-col justify-between">
