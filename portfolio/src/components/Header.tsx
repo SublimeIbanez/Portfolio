@@ -24,11 +24,11 @@ export default function Header() {
 
     return (
         <>
-            <div className="flex flex-col">
-                <a className="text-[48px]" href="#">
+            <div className="flex">
+                <a className="text-5xl min-w-full" href="#">
                     Joshua Benn
+                    <img src={Underline} className="-mt-5 z-10 sm:-pr-4" />
                 </a>
-                <img src={Underline} className="-mt-3 z-10 w-[320px]" />
             </div>
             <div className="flex sm:flex-col justify-between">
                 <div className="social flex gap-3 mt-1">
