@@ -15,7 +15,7 @@ export default function Header() {
     const [theme, setMode] = useState(keepTheme);
 
     useEffect(() => {
-        setTheme({ themeName: theme == "dark" ? "light" : "dark", setThemeName: setMode });
+        setTheme({ themeName: window.matchMedia("(prefers-color-scheme: dark)") ? "dark" : "light", setThemeName: setMode });
     }, []);
 
     const toggleMode = () => {
@@ -24,7 +24,7 @@ export default function Header() {
 
     return (
         <>
-            <img src={Underline} className="w-auto -mb-12 mt-10 z-10" />
+            <img src={Underline} className="w-auto -mb-12 mt-10 z-10 min-w-72" />
             <div className="flex">
                 <a className="text-5xl min-w-full" href="#">
                     Joshua Benn
@@ -50,6 +50,4 @@ export default function Header() {
         </>
     );
 }
-
-                    // <FontAwesomeIcon icon={theme == "theme-dark" ? faSun : faMoon} onClick={toggleMode} className="mt-1" />
 
