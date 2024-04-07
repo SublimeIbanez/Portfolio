@@ -4,7 +4,7 @@ import { keepTheme, setTheme } from "./theme";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 import Mode_Dark from "../images/dark_mode.svg";
 import Mode_Light from "../images/light_mode.svg";
