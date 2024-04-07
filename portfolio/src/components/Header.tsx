@@ -15,7 +15,7 @@ export default function Header() {
     const [theme, setMode] = useState(keepTheme);
 
     useEffect(() => {
-        setTheme({ themeName: theme == "dark" ? "dark" : "light", setThemeName: setMode });
+        setTheme({ themeName: theme == "dark" ? "light" : "dark", setThemeName: setMode });
     }, []);
 
     const toggleMode = () => {
