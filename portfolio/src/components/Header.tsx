@@ -27,7 +27,7 @@ export default function Header() {
             <div className="flex">
                 <a className="text-5xl min-w-full" href="#">
                     Joshua Benn
-                    <img src={Underline} className="-mt-4 z-10" />
+                    <img src={Underline} className="-mt-5 z-10 sm:mr-3" />
                 </a>
             </div>
             <div className="flex sm:flex-col justify-between">
