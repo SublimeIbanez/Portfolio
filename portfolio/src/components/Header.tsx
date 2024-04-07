@@ -24,7 +24,7 @@ export default function Header() {
 
     return (
         <>
-            <img src={Underline} className="w-auto -mb-12 mt-10 z-10 min-w-72" />
+            <img src={Underline} className="-mb-12 mt-10 z-10 min-w-80" />
             <div className="flex">
                 <a className="text-5xl min-w-full" href="#">
                     Joshua Benn
