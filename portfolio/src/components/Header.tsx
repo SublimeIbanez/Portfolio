@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
-// import Mode_Dark from "../images/dark_mode.svg";
-// import Mode_Light from "../images/light_mode.svg";
+import Mode_Dark from "../images/dark_mode.svg";
+import Mode_Light from "../images/light_mode.svg";
 import Underline from "../images/header_slash.svg";
 
 
@@ -28,7 +28,8 @@ export default function Header() {
             </div>
             <div className="flex sm:flex-col justify-between">
                 <div className="social flex gap-3 mt-1">
-                    <FontAwesomeIcon icon={theme == "theme-dark" ? faSun : faMoon} onClick={toggleMode} className="mt-1" />
+                    <img className="mt-1 h-[20px] w-auto" src={theme == "theme-dark" ? Mode_Light : Mode_Dark}
+                        alt="Mode Selection" onClick={toggleMode} />
 
                     <a href="https://github.com/JoshBenn">
                         <FontAwesomeIcon icon={faGithub} />
@@ -45,4 +46,6 @@ export default function Header() {
         </>
     );
 }
+
+                    // <FontAwesomeIcon icon={theme == "theme-dark" ? faSun : faMoon} onClick={toggleMode} className="mt-1" />
 
