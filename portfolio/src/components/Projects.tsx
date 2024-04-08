@@ -29,6 +29,20 @@ export default function Projects() {
 
             <Separator />
             <Project
+                title="NASA: M.I.S.T"
+                role="Core Contributor"
+                body="Web-based game developed for NASA's Psyche mission."
+                skills={["C#", "Unity", "DevOps", "Agile"]}
+                links={[
+                    {
+                        site: Site.Website,
+                        url: "https://missiontopsyche.github.io/tungsten_12a_web_game-se/M.I.S.T/",
+                    }
+                ]}
+            />
+
+            <Separator />
+            <Project
                 title="Logfather"
                 role="Creator"
                 body="Highly customizable, lightweight logging system for rust applications used in development and deployment environments - configurable for terminal and file output."
@@ -47,15 +61,19 @@ export default function Projects() {
 
             <Separator />
             <Project
-                title="NASA: M.I.S.T"
-                role="Core Contributor"
-                body="Web-based game developed for NASA's Psyche mission."
-                skills={["C#", "Unity", "DevOps", "Agile"]}
+                title="Dekor"
+                role="Creator"
+                body="Simple character and styling library for terminal output in Rust projects."
+                skills={["Rust"]}
                 links={[
                     {
-                        site: Site.Website,
-                        url: "https://missiontopsyche.github.io/tungsten_12a_web_game-se/M.I.S.T/",
-                    }
+                        site: Site.GitHub,
+                        url: "https://github.com/JoshBenn/dekor",
+                    },
+                    {
+                        site: Site.Crates,
+                        url: "https://crates.io/crates/dekor",
+                    },
                 ]}
             />
         </div>
