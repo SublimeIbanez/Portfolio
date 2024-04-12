@@ -3,10 +3,12 @@
     --text_color: white;
     color-scheme: light dark;
     font-family: "monospace";
+    -ms-overflow-style: thin;
+    scrollbar-width: thin;
 }
 
 [data-theme="light"] {
-    --bg_color: #FFFFFF;
+    --bg_color: #dddddd;
     --text_color: black;
 }
 

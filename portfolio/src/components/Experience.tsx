@@ -82,7 +82,7 @@ function ExperienceEntry({ title, start_date, end_date, company, bullets }: Expe
                 <h3>{title}</h3>
                 <h4 className="text-sky-950 dark:text-sky-300">{company}</h4>
             </div>
-            <h4 className="uppercase font-extrabold text-neutral-600 text-xl text-right">{DateDisplay(start_date)}-{DateDisplay(end_date)}</h4>
+            <h4 className="uppercase font-extrabold text-neutral-500 text-xl text-right">{DateDisplay(start_date)}-{DateDisplay(end_date)}</h4>
             <ul className="ml-4 list-disc text-md">
                 {bullets.map((bullet) => {
                     return <li className="text_entry mb-1 text-teal-500">{bullet}</li>
