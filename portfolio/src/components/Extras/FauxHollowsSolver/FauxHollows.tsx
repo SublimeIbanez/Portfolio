@@ -10,7 +10,7 @@ const FauxHollows = () => {
     const [board, changeBoard] = useState(Boards.Default);
 
     return (
-        <div className="faux-hollows-main flex flex-col min-w-screen-md max-w-screen-md lg:h-[95dvh] h-[75dvh]">
+        <div className="faux-hollows-main flex flex-col min-w-screen-md max-w-screen-md lg:h-[95dvh] h-[75dvh] lg:pt-24">
             <button
                 className="px-4 py-1 bg-sky-500 rounded-md my-4"
                 onClick={_ => {
