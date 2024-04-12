@@ -13,9 +13,37 @@
     font-family: sans-serif;
 }
 
+.content, .faux-hollows-solutions, .faux-hollows-main {
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.icon {
+    transition: transform 0.1s ease, color 0.1s ease;
+}
+
+.icon:hover {
+    transform: scale(1.35);
+    color: #64ffda;
+}
+
+.hr-expand {
+    transition: width 0.2s ease-out, transform 0.1s ease-out;
+}
+.hr-color {
+    background: #64ffda;
+}
+
 @media screen and (min-width: 500px) {
     body {
         display: flex;
         justify-content: center;
+    }
+
+    .content, .faux-hollows-solutions, .faux-hollows-main {
+        overflow-y: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 }

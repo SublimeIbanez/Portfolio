@@ -13,7 +13,7 @@ export default function Projects() {
             <Project
                 title="ByteCrypt"
                 role="Core Contributor"
-                body="Lightweight application, developed in rust, that allows users to encrypt their local data and upload it to and through various cloud services."
+                body="Lightweight application that allows users to encrypt their local data and upload it to and through various cloud services."
                 skills={["Rust", "SQL", "Cryptography", "Go", "React", "Typescript", "REST",]}
                 links={[
                     {
@@ -102,7 +102,7 @@ function Project({ title, role, body, skills, links }: ProjectProps) {
                         })
                     }
                 </div>
-                <h5 className="text-m text-neutral-600">{role}</h5>
+                <h5 className="text-m dark:text-neutral-400 text-neutral-700 font-bold">{role}</h5>
                 <p className="text_entry">{body}</p>
                 {SkillsList({ skills })}
             </div>
@@ -121,7 +121,9 @@ function SkillsList({ skills }: SkillProps) {
             {
                 skills?.map((skill) => {
                     return (
-                        <span className="rounded-full mr-1 pl-2 pr-2 text-sm font-bold bg-emerald-900 bg-opacity-70 text-green-300 mt-1">{skill}</span>
+                        <span className="rounded-full mr-1 pl-2 pr-2 text-sm font-bold bg-emerald-900 bg-opacity-70 text-green-200 mt-1">
+                            {skill}
+                        </span>
                     )
                 })
             }
