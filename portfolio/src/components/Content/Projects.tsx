@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Separator from "./Separator";
@@ -25,6 +25,19 @@ export default function Projects() {
                         url: "https://www.thebytecrypt.com/",
                     },
                 ]}
+                collapseSection={[
+                    { mainText: "Co-lead on overall design and architecture of the program." },
+                    {
+                        mainText: "Major driver in core feature design including:",
+                        innerText: [
+                            { mainText: "OAuth integration and verification." },
+                            { mainText: "Custom configuration implementation." },
+                            { mainText: "Centralized design logic flow." },
+                            { mainText: "Database configuration and management." }
+                        ]
+                    },
+                    { mainText: "Created custom library for performance testing encryption on varying file sizes and types." },
+                ]}
             />
 
             <Separator />
@@ -38,6 +51,12 @@ export default function Projects() {
                         site: Site.Website,
                         url: "https://missiontopsyche.github.io/tungsten_12a_web_game-se/M.I.S.T/",
                     }
+                ]}
+                collapseSection={[
+                    { mainText: "Core developer and designer of the game and its system." },
+                    { mainText: "Focused on backend functionality and developer tooling."},
+                    { mainText: "Created core functionaliity for many systems in widespread use throughout the game." },
+                    { mainText: "Team leader and Lead Developer." },
                 ]}
             />
 
@@ -57,6 +76,13 @@ export default function Projects() {
                         url: "https://crates.io/crates/logfather",
                     },
                 ]}
+                collapseSection={[
+                    { mainText: "Developed the library for logging information on both terminal and file outputs." },
+                    { mainText: "Ensures the core focus was customizability - almost any aspect can easily be customized."},
+                    { mainText: "Ensures thread safety." },
+                    { mainText: "Comprehensively documented." },
+                    { mainText: "Implemented features tailored to specifications requested by corporate clients." },
+                ]}
             />
 
             <Separator />
@@ -75,6 +101,10 @@ export default function Projects() {
                         url: "https://crates.io/crates/dekor",
                     },
                 ]}
+                collapseSection={[
+                    { mainText: "Developed the library for terminal outputs with an intention to provide a lightweight and easy-to-use tool for developers." },
+                    { mainText: "Comprehensively documented." },
+                ]}
             />
         </div>
     )
@@ -88,25 +118,48 @@ type ProjectProps = {
     img?: string;
     skills?: string[];
     links?: LinkProps[];
+    collapseSection?: CollapseProps[];
 }
 
-function Project({ title, role, body, skills, links }: ProjectProps) {
+type CollapseProps = {
+    mainText?: string;
+    innerText?: CollapseProps[];
+}
+
+const Collapsed: React.FC<CollapseProps> = ({ mainText, innerText }) => {
     return (
-        <>
-            <div className="ml-2">
-                <div className="flex gap-3">
-                    <h3 className="text-2xl font-extrabold text-sky-600">{title}</h3>
-                    {
-                        links?.map((link) => {
-                            return (Link(link))
-                        })
-                    }
-                </div>
-                <h5 className="text-m dark:text-neutral-400 text-neutral-700 font-bold">{role}</h5>
-                <p className="text_entry">{body}</p>
-                {SkillsList({ skills })}
+        <ul className="list-disc ml-6 text-base text-teal-500">
+            <li>{mainText}</li>
+            {innerText?.map((item, index) => (
+                <Collapsed key={index} {...item} />
+            ))}
+        </ul>
+    )
+}
+
+const Project: React.FC<ProjectProps & CollapseProps> = ({ title, role, body, skills, links, collapseSection }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <div onClick={() => setIsOpen(!isOpen)}
+            className={`project p-3 transform select-none duration-300 ease-in-out hover:-translate-y-1.5 hover:bg-sky-100/5 rounded-2xl cursor-pointer`}>
+            <div className="flex gap-3">
+                <h3 className="text-2xl font-extrabold text-sky-600">{title}</h3>
+                {
+                    links?.map((link) => {
+                        return (Link(link))
+                    })
+                }
             </div>
-        </>
+            <h5 className="text-m dark:text-neutral-400 text-neutral-700 font-bold">{role}</h5>
+            <p className="text_entry">{body}</p>
+            <div className={`origin-top ${isOpen ? "scale-y-100 h-auto" : "scale-y-0 h-0"}`}>
+                {collapseSection?.map((item, index) => (
+                    <Collapsed key={index} {...item} />
+                ))}
+            </div>
+            {SkillsList({ skills })}
+        </div>
     )
 }
 
@@ -121,7 +174,7 @@ function SkillsList({ skills }: SkillProps) {
             {
                 skills?.map((skill) => {
                     return (
-                        <span className="rounded-full mr-1 pl-2 pr-2 text-sm font-bold bg-emerald-900 bg-opacity-70 text-green-200 mt-1">
+                        <span className="rounded-full mr-1 pl-2 pr-2 text-sm bg-emerald-900 bg-opacity-70 text-green-200 mt-1">
                             {skill}
                         </span>
                     )
@@ -151,4 +204,5 @@ function Link({ site, url }: LinkProps) {
         </a>
     )
 }
+
 
