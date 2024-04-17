@@ -14,7 +14,7 @@ const App = () => {
 
     return (
         <BrowserRouter>
-            <div className="App flex flex-col m-4 text-lg lg:flex-row">
+            <div className="App flex flex-col m-4 text-lg lg:flex-row justify-center">
                 <Routes>
                     <Route path="/" element={
                         <>
