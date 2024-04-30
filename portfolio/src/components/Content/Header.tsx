@@ -30,7 +30,7 @@ const Header: React.FC<ActiveSectionProps & HeaderProps> = ({ activeSection, sho
     };
 
     return (
-        <div className="header lg:w-1/3 lg:py-24 lg:mr-10 lg:max-h-screen overflow-y-auto sticky top-0 min-w-92 flex-none flex flex-col justify-between z-50">
+        <div className="header lg:w-1/3 lg:py-24 lg:mr-10 lg:max-h-screen overflow-y-auto sticky top-0 left-0 sm:left-2 min-w-92 flex-none flex flex-col justify-between z-50">
             <div>
                 {/* Logo */}
                 <Link className="min-w-full" to="/">
