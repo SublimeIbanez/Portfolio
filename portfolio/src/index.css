@@ -17,6 +17,6 @@ body {
     color: var(--text_color);
 }
 
-.header, .top_section {
+.header {
     background-color: var(--bg_color);
 }
