@@ -9,12 +9,17 @@
     font-family: monospace;
 }
 
+.App {
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .text_entry {
     font-family: sans-serif;
 }
 
-.content, .faux-hollows-solutions, .faux-hollows-main {
-    overflow-y: auto;
+.faux-hollows-solutions, .faux-hollows-main {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -42,8 +47,7 @@
         justify-content: center;
     }
 
-    .content, .faux-hollows-solutions, .faux-hollows-main {
-        overflow-y: auto;
+    .faux-hollows-solutions, .faux-hollows-main {
         -ms-overflow-style: none;
         scrollbar-width: none;
     }

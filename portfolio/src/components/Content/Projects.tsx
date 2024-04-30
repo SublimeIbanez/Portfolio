@@ -50,6 +50,10 @@ export default function Projects() {
                     {
                         site: Site.Website,
                         url: "https://missiontopsyche.github.io/tungsten_12a_web_game-se/M.I.S.T/",
+                    },
+                    {
+                        site: Site.GitHub,
+                        url: "https://github.com/MissionToPsyche/tungsten_12a_web_game-se",
                     }
                 ]}
                 collapseSection={[

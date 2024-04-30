@@ -1,11 +1,10 @@
 import { useState, useMemo } from "react";
 
-import { MatchBlock, MatchBlockString, Boards, Block } from "./BoardLayouts";
-
+import { Boards, Block } from "./BoardLayouts";
 
 
 const FauxHollows = () => {
-    const [selectedBlock, changeBlock] = useState(MatchBlock("⬛"));
+    const [selectedBlock, changeBlock] = useState(Block.Locked);
 
     const [board, changeBoard] = useState(Boards.Default);
 
@@ -51,11 +50,11 @@ const FauxHollows = () => {
                         <li><button
                             className="p-3"
                             style={{
-                                backgroundColor: Block.Box.toString(),
+                                backgroundColor: Block.Crate.toString(),
                                 border: "4px solid",
-                                borderColor: selectedBlock === Block.Box ? "green" : Block.Box.toString()
+                                borderColor: selectedBlock === Block.Crate ? "green" : Block.Crate.toString()
                             }}
-                            onClick={_ => changeBlock(Block.Box)}
+                            onClick={_ => changeBlock(Block.Crate)}
                         ></button></li>
                         <li><button
                             className="p-3"
@@ -81,8 +80,8 @@ export default FauxHollows;
 
 
 type BoardProps = {
-    layout: string[][];
-    setLayout?: React.Dispatch<React.SetStateAction<string[][]>>;
+    layout: Block[][];
+    setLayout?: React.Dispatch<React.SetStateAction<Block[][]>>;
     selectedBlock?: Block;
     modifiable: boolean;
 }
@@ -93,10 +92,10 @@ const Board = ({ layout, setLayout, selectedBlock, modifiable }: BoardProps) => 
             return;
         }
         const newLayout = layout.map(row => [...row]);
-        if (layout[row][column] === MatchBlockString(selectedBlock!)) {
-            newLayout[row][column] = MatchBlockString(Block.Default);
+        if (layout[row][column] === selectedBlock!) {
+            newLayout[row][column] = Block.Default;
         } else {
-            newLayout[row][column] = MatchBlockString(selectedBlock!);
+            newLayout[row][column] = selectedBlock!;
         }
         setLayout!(newLayout);
     };
@@ -111,7 +110,7 @@ const Board = ({ layout, setLayout, selectedBlock, modifiable }: BoardProps) => 
                         <div
                             key={columnIndex}
                             className={`${padding} border-2 border-black`}
-                            style={{ backgroundColor: MatchBlock(block) }}
+                            style={{ backgroundColor: block }}
                             onClick={() => handleClick(rowIndex, columnIndex)}
                         ></div>
                     ))}
@@ -122,10 +121,10 @@ const Board = ({ layout, setLayout, selectedBlock, modifiable }: BoardProps) => 
 };
 
 const Solutions = ({ layout }: BoardProps) => {
-    const testEquality = (board: string[][]) => {
+    const testEquality = (board: Block[][]) => {
         for (let row = 0; row < layout.length; ++row) {
             for (let column = 0; column < layout[row].length; ++column) {
-                if (MatchBlock(layout[row][column]) !== Block.Default && layout[row][column] !== board[row][column]) {
+                if (layout[row][column] !== Block.Default && layout[row][column] !== board[row][column]) {
                     return false;
                 }
             }
@@ -134,7 +133,7 @@ const Solutions = ({ layout }: BoardProps) => {
     };
 
     const solutions = useMemo(() => {
-        let list: string[][][] = [];
+        let list: Block[][][] = [];
 
         Object.entries(Boards).forEach(([set, board]) => {
             if (set !== "Default") {
