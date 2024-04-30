@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
 import "./App.css";
 
 import { Sections } from "./components/Content/ScrollContext";
@@ -52,6 +51,7 @@ const App = () => {
                     } />
                     <Route path="/FauxHollows" element={
                         <>
+                            {window.scrollTo(0, 0)}
                             <Header showNavSection={false} />
                             <FauxHollows />
                         </>
