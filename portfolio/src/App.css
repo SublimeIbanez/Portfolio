@@ -47,12 +47,9 @@
         justify-content: center;
     }
 
-    .faux-hollows-main {
+    .faux-hollows-main, .faux-hollows-solutions {
+        overflow-y: auto;
         -ms-overflow-style: none;
         scrollbar-width: none;
-    }
-
-    .faux-hollows-solutions {
-        overflow-y: auto;
     }
 }

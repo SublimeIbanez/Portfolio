@@ -10,66 +10,64 @@ const FauxHollows = () => {
 
     return (
         <div className="faux-hollows-main flex flex-col min-w-screen-md max-w-screen-md lg:h-[95dvh] h-[75dvh] lg:pt-24">
-            <div className="top_section flex flex-col sticky top-0 z-20">
-                <button
-                    className="px-4 py-1 bg-sky-500 rounded-md my-4"
-                    onClick={_ => {
-                        changeBoard(Boards.Default);
-                        changeBlock(Block.Locked);
-                    }}
-                >Reset Board</button>
-                <div className="flex gap-4 sm:flex-row justify-around align-center mb-6">
-                    <div>
-                        <ul className="flex flex-col gap-1">
-                            <li><button
-                                className="p-3"
-                                style={{
-                                    backgroundColor: Block.Locked.toString(),
-                                    border: "4px solid",
-                                    borderColor: selectedBlock === Block.Locked ? "green" : Block.Locked.toString()
-                                }}
-                                onClick={_ => changeBlock(Block.Locked)}
-                            ></button></li>
-                            <li><button
-                                className="p-3"
-                                style={{
-                                    backgroundColor: Block.Blank.toString(),
-                                    border: "4px solid",
-                                    borderColor: selectedBlock === Block.Blank ? "green" : Block.Blank.toString()
-                                }}
-                                onClick={_ => changeBlock(Block.Blank)}
-                            ></button></li>
-                            <li><button
-                                className="p-3"
-                                style={{
-                                    backgroundColor: Block.Swords.toString(),
-                                    border: "4px solid",
-                                    borderColor: selectedBlock === Block.Swords ? "green" : Block.Swords.toString()
-                                }}
-                                onClick={_ => changeBlock(Block.Swords)}
-                            ></button></li>
-                            <li><button
-                                className="p-3"
-                                style={{
-                                    backgroundColor: Block.Crate.toString(),
-                                    border: "4px solid",
-                                    borderColor: selectedBlock === Block.Crate ? "green" : Block.Crate.toString()
-                                }}
-                                onClick={_ => changeBlock(Block.Crate)}
-                            ></button></li>
-                            <li><button
-                                className="p-3"
-                                style={{
-                                    backgroundColor: Block.Fox.toString(),
-                                    border: "4px solid",
-                                    borderColor: selectedBlock === Block.Fox ? "green" : Block.Fox.toString()
-                                }}
-                                onClick={_ => changeBlock(Block.Fox)}
-                            ></button></li>
-                        </ul>
-                    </div>
-                    <Board layout={board} setLayout={changeBoard} selectedBlock={selectedBlock} modifiable={true} />
+            <button
+                className="px-4 py-1 bg-sky-500 rounded-md my-4"
+                onClick={_ => {
+                    changeBoard(Boards.Default);
+                    changeBlock(Block.Locked);
+                }}
+            >Reset Board</button>
+            <div className="flex gap-4 sm:flex-row justify-around align-center mb-6">
+                <div>
+                    <ul className="flex flex-col gap-1">
+                        <li><button
+                            className="p-3"
+                            style={{
+                                backgroundColor: Block.Locked.toString(),
+                                border: "4px solid",
+                                borderColor: selectedBlock === Block.Locked ? "green" : Block.Locked.toString()
+                            }}
+                            onClick={_ => changeBlock(Block.Locked)}
+                        ></button></li>
+                        <li><button
+                            className="p-3"
+                            style={{
+                                backgroundColor: Block.Blank.toString(),
+                                border: "4px solid",
+                                borderColor: selectedBlock === Block.Blank ? "green" : Block.Blank.toString()
+                            }}
+                            onClick={_ => changeBlock(Block.Blank)}
+                        ></button></li>
+                        <li><button
+                            className="p-3"
+                            style={{
+                                backgroundColor: Block.Swords.toString(),
+                                border: "4px solid",
+                                borderColor: selectedBlock === Block.Swords ? "green" : Block.Swords.toString()
+                            }}
+                            onClick={_ => changeBlock(Block.Swords)}
+                        ></button></li>
+                        <li><button
+                            className="p-3"
+                            style={{
+                                backgroundColor: Block.Crate.toString(),
+                                border: "4px solid",
+                                borderColor: selectedBlock === Block.Crate ? "green" : Block.Crate.toString()
+                            }}
+                            onClick={_ => changeBlock(Block.Crate)}
+                        ></button></li>
+                        <li><button
+                            className="p-3"
+                            style={{
+                                backgroundColor: Block.Fox.toString(),
+                                border: "4px solid",
+                                borderColor: selectedBlock === Block.Fox ? "green" : Block.Fox.toString()
+                            }}
+                            onClick={_ => changeBlock(Block.Fox)}
+                        ></button></li>
+                    </ul>
                 </div>
+                <Board layout={board} setLayout={changeBoard} selectedBlock={selectedBlock} modifiable={true} />
             </div>
 
             <Solutions layout={board} modifiable={false} />
