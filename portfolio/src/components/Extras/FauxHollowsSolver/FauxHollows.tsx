@@ -67,7 +67,6 @@ const FauxHollows = () => {
                         ></button></li>
                     </ul>
                 </div>
-
                 <Board layout={board} setLayout={changeBoard} selectedBlock={selectedBlock} modifiable={true} />
             </div>
 
