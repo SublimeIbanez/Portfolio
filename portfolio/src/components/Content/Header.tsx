@@ -30,7 +30,7 @@ const Header: React.FC<ActiveSectionProps & HeaderProps> = ({ activeSection, sho
     };
 
     return (
-        <div className="header lg:w-1/3 lg:py-24 lg:mr-10 lg:max-h-screen sticky top-0 min-w-92 flex-none flex flex-col justify-between">
+        <div className="header lg:w-1/3 lg:py-24 lg:mr-10 lg:max-h-screen overflow-y-auto sticky top-0 min-w-92 flex-none flex flex-col justify-between z-50">
             <div>
                 {/* Logo */}
                 <Link className="min-w-full" to="/">
@@ -65,7 +65,7 @@ const Header: React.FC<ActiveSectionProps & HeaderProps> = ({ activeSection, sho
                 </div>
             </div>
 
-            <p className="flex-wrap hidden md:flex text-slate-400">I'm a software engineer and USAF veteran with over a decade of experience working in high-stress high-performance environments. I'm a perpetual learner, always hungry for improvement!</p>
+            <p className="flex-wrap hidden md:flex max-w-sm text-slate-400">I'm a software engineer and USAF veteran with over a decade of experience working in high-stress high-performance environments. I'm a perpetual learner, always hungry for improvement!</p>
 
             {/* Navigation Pane */}
             <ul className={`flex flex-row pb-2 lg:flex-col gap-3 text-lg lg:text-xl justify-around lg:font-bold ${showNavSection ? "" : "invisible"}`}>

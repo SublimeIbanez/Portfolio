@@ -16,3 +16,7 @@ body {
     background-color: var(--bg_color);
     color: var(--text_color);
 }
+
+.header {
+    background-color: var(--bg_color);
+}
