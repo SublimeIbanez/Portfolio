@@ -9,6 +9,19 @@ export default function Experience() {
             </h2>
             <hr className="h-1 bg-gray-100 border-0 rounded dark:bg-gray-700" />
             <ExperienceEntry
+                title="Full Stack Developer"
+                start_date={{ year: 2024, month: MonthEntry.September }}
+                end_date={{ year: 0, month: MonthEntry.Current }}
+                company="City Tele Coin"
+                bullets={[
+                    "Develop full stack applications for thousands of customers",
+                    "Deployment with Kubernetes and Docker implementations",
+                    "Building kiosk applications using accessibility best practices",
+                ]}
+            />
+
+            <Separator />
+            <ExperienceEntry
                 title="Unit Deployment Manager"
                 start_date={{ year: 2016, month: MonthEntry.February }}
                 end_date={{ year: 2018, month: MonthEntry.March }}
@@ -40,6 +53,7 @@ export default function Experience() {
 }
 
 enum MonthEntry {
+    Current = "Current",
     January = "JAN",
     February = "FEB",
     March = "MAR",
@@ -48,7 +62,7 @@ enum MonthEntry {
     June = "JUN",
     July = "JUL",
     August = "AUG",
-    Septempter = "SEP",
+    September = "SEP",
     October = "OCT",
     November = "NOV",
     December = "DEC",
@@ -62,7 +76,7 @@ type DateEntry = {
 function DateDisplay({ year, month }: DateEntry) {
     return (
         <>
-            {month.toString()} {year}
+            {month.toString()} {year === 0 ? "" : year}
         </>
     )
 }

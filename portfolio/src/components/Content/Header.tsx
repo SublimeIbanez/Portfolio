@@ -45,7 +45,7 @@ const Header: React.FC<ActiveSectionProps & HeaderProps> = ({ activeSection, sho
                     <div className="mt-1 h-[20px] border-l-2 border-slate-600"></div>
 
                     {/* Social Media */}
-                    <a href="https://github.com/JoshBenn">
+                    <a href="https://github.com/SublimeIbanez">
                         <FontAwesomeIcon icon={faGithub} className="icon" />
                     </a>
                     <a href="https://www.linkedin.com/in/joshua-benn/">
