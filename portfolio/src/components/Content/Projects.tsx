@@ -48,12 +48,12 @@ export default function Projects() {
                 skills={["C#", "Unity", "DevOps", "Agile"]}
                 links={[
                     {
-                        site: Site.Website,
-                        url: "https://missiontopsyche.github.io/tungsten_12a_web_game-se/M.I.S.T/",
-                    },
-                    {
                         site: Site.GitHub,
                         url: "https://github.com/MissionToPsyche/tungsten_12a_web_game-se",
+                    },
+                    {
+                        site: Site.Website,
+                        url: "https://missiontopsyche.github.io/tungsten_12a_web_game-se/M.I.S.T/",
                     }
                 ]}
                 collapseSection={[
@@ -73,7 +73,7 @@ export default function Projects() {
                 links={[
                     {
                         site: Site.GitHub,
-                        url: "https://github.com/JoshBenn/logfather",
+                        url: "https://github.com/SublimeIbanez/logfather",
                     },
                     {
                         site: Site.Crates,
@@ -98,7 +98,7 @@ export default function Projects() {
                 links={[
                     {
                         site: Site.GitHub,
-                        url: "https://github.com/JoshBenn/dekor",
+                        url: "https://github.com/SublimeIbanez/dekor",
                     },
                     {
                         site: Site.Crates,
