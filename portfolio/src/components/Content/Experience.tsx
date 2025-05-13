@@ -14,9 +14,15 @@ export default function Experience() {
                 end_date={{ year: 0, month: MonthEntry.Current }}
                 company="City Tele Coin"
                 bullets={[
-                    "Develop full stack applications for thousands of customers",
-                    "Deployment with Kubernetes and Docker implementations",
-                    "Building kiosk applications using accessibility best practices",
+                    "Built and modernized a multi-tenant Business Management System and E-Commerce platform from the ground-up using ASP.NET Core and C#. Improving scalability, maintainability, and support for complex facility-wide transactions and inventory management",
+                    "Created and improved local development automation tools cutting environment setup time by over 60% and accelerating onboarding for new engineers and developers",
+                    "Defined and rolled out coding standards and engineering best practices (e.g. clean architecture and SOLID principles), improving consistency, readability, and long-term maintainability of the code",
+                    "Developed an authorization system leveraging ASP.NET Core and Redis for session management, RESTful APIs for secure data transmission, and cookies for client-side persistence",
+                    "Contributed to frontend design by building UI wireframes, mockups, and implementing reusable components using TypeScript, Tailwind CSS, Bootstrap, and Next.JS",
+                    "Integrated third-party payment gateways for order processing, enabling secure and efficient transactions with accurate product inventory tracking",
+                    "Wrote detailed technical documentation and system flowcharts to clearly communicate architecture decisions and processes",
+                    "Collaborated cross-functionally with product managers, QA, and DevOps periodically in an Agile environment to prioritize work, run efficient sprints, and ship high-impact features",
+                    "Used PostgreSQL and MongoDB to support both relational and document-based data needs ensuring performance and flexibility for a multi-facility system supporting thousands of concurrent users",
                 ]}
             />
 
