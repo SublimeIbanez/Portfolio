@@ -7,18 +7,16 @@ export default function About() {
 
   return (
     <div>
-      <div className="cursor-pointer select-none p-3 rounded-2xl hover:bg-sky-100/5 transition-all duration-300 ease-in-out" onClick={() => setIsOpen(!isOpen)}>
-        <div className="flex justify-between items-center">
-          <h2 className="font-extrabold text-3xl">
-            ABOUT
-          </h2>
-          <FontAwesomeIcon
-            icon={faChevronDown}
-            className={`text-slate-400 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"}`}
-          />
-        </div>
-        <hr className="h-1 bg-gray-100 border-0 rounded dark:bg-gray-700" />
-        <p className="text_entry mt-2">
+      <h2 className="font-extrabold text-3xl">
+        ABOUT
+      </h2>
+      <hr className="h-1 bg-gray-100 border-0 rounded dark:bg-gray-700" />
+      <div className="cursor-pointer select-none p-3 rounded-2xl hover:bg-sky-100/5 transition-all duration-300 ease-in-out relative" onClick={() => setIsOpen(!isOpen)}>
+        <FontAwesomeIcon
+          icon={faChevronDown}
+          className={`absolute top-3 right-3 text-slate-400 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"}`}
+        />
+        <p className="text_entry pr-8">
           7-year Air Force veteran turned full-stack software engineer specializing in C#/.NET, React, and TypeScript. Building accessible applications, contributing to NASA projects, and creating open-source tools for developers.
         </p>
         <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-[600px] opacity-100 mt-2" : "max-h-0 opacity-0"}`}>
