@@ -1,12 +1,11 @@
 
 export enum Sections {
-    About = "About",
-    Projects = "Projects",
-    Experience = "Experience",
-    Extras = "Extras",
+  About = "About",
+  Experience = "Experience",
+  Projects = "Projects",
 }
 
 export interface ActiveSectionProps {
-    activeSection?: Sections;
-    setActiveSection?: React.Dispatch<React.SetStateAction<Sections>>;
+  activeSection?: Sections;
+  setActiveSection?: React.Dispatch<React.SetStateAction<Sections>>;
 }
