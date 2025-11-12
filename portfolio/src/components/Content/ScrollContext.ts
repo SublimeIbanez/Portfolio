@@ -1,9 +1,8 @@
 
 export enum Sections {
     About = "About",
-    Projects = "Projects",
     Experience = "Experience",
-    Extras = "Extras",
+    Projects = "Projects",
 }
 
 export interface ActiveSectionProps {

@@ -1,5 +1,5 @@
 import { ReactNode, useState } from "react";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faLink, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Separator from "./Separator";
 
@@ -10,37 +10,6 @@ export default function Projects() {
         <div className="flex flex-col">
             <h2 className="font-extrabold text-3xl">PROJECTS</h2>
             <hr className="h-1 bg-gray-100 border-0 rounded dark:bg-gray-700" />
-            <Project
-                title="ByteCrypt"
-                role="Core Contributor"
-                body="Lightweight application that allows users to encrypt their local data and upload it to and through various cloud services."
-                skills={["Rust", "SQL", "Cryptography", "Go", "React", "Typescript", "REST",]}
-                links={[
-                    {
-                        site: Site.GitHub,
-                        url: "https://github.com/ExtremelyRyan/ByteCrypt",
-                    },
-                    {
-                        site: Site.Website,
-                        url: "https://www.thebytecrypt.com/",
-                    },
-                ]}
-                collapseSection={[
-                    { mainText: "Co-lead on overall design and architecture of the program." },
-                    {
-                        mainText: "Major driver in core feature design including:",
-                        innerText: [
-                            { mainText: "OAuth integration and verification." },
-                            { mainText: "Custom configuration implementation." },
-                            { mainText: "Centralized design logic flow." },
-                            { mainText: "Database configuration and management." }
-                        ]
-                    },
-                    { mainText: "Created custom library for performance testing encryption on varying file sizes and types." },
-                ]}
-            />
-
-            <Separator />
             <Project
                 title="NASA: M.I.S.T"
                 role="Core Contributor"
@@ -59,7 +28,7 @@ export default function Projects() {
                 collapseSection={[
                     { mainText: "Core developer and designer of the game and its system." },
                     { mainText: "Focused on backend functionality and developer tooling."},
-                    { mainText: "Created core functionaliity for many systems in widespread use throughout the game." },
+                    { mainText: "Created core functionality for many systems in widespread use throughout the game." },
                     { mainText: "Team leader and Lead Developer." },
                 ]}
             />
@@ -110,6 +79,37 @@ export default function Projects() {
                     { mainText: "Comprehensively documented." },
                 ]}
             />
+
+            <Separator />
+            <Project
+                title="ByteCrypt"
+                role="Core Contributor"
+                body="Lightweight application that allows users to encrypt their local data and upload it to and through various cloud services."
+                skills={["Rust", "SQL", "Cryptography", "Go", "React", "Typescript", "REST",]}
+                links={[
+                    {
+                        site: Site.GitHub,
+                        url: "https://github.com/ExtremelyRyan/ByteCrypt",
+                    },
+                    {
+                        site: Site.Website,
+                        url: "https://www.thebytecrypt.com/",
+                    },
+                ]}
+                collapseSection={[
+                    { mainText: "Co-lead on overall design and architecture of the program." },
+                    {
+                        mainText: "Major driver in core feature design including:",
+                        innerText: [
+                            { mainText: "OAuth integration and verification." },
+                            { mainText: "Custom configuration implementation." },
+                            { mainText: "Centralized design logic flow." },
+                            { mainText: "Database configuration and management." }
+                        ]
+                    },
+                    { mainText: "Created custom library for performance testing encryption on varying file sizes and types." },
+                ]}
+            />
         </div>
     )
 }
@@ -147,17 +147,21 @@ const Project: React.FC<ProjectProps & CollapseProps> = ({ title, role, body, sk
     return (
         <div onClick={() => setIsOpen(!isOpen)}
             className={`project p-3 transform select-none duration-300 ease-in-out hover:-translate-y-1.5 hover:bg-sky-100/5 rounded-2xl cursor-pointer`}>
-            <div className="flex gap-3">
+            <div className="flex gap-3 items-center">
                 <h3 className="text-2xl font-extrabold text-sky-600">{title}</h3>
                 {
                     links?.map((link) => {
                         return (Link(link))
                     })
                 }
+                <FontAwesomeIcon
+                    icon={faChevronDown}
+                    className={`ml-auto text-slate-400 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"}`}
+                />
             </div>
             <h5 className="text-m dark:text-neutral-400 text-neutral-700 font-bold">{role}</h5>
             <p className="text_entry">{body}</p>
-            <div className={`origin-top ${isOpen ? "scale-y-100 h-auto" : "scale-y-0 h-0"}`}>
+            <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"}`}>
                 {collapseSection?.map((item, index) => (
                     <Collapsed key={index} {...item} />
                 ))}

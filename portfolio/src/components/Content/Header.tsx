@@ -65,7 +65,7 @@ const Header: React.FC<ActiveSectionProps & HeaderProps> = ({ activeSection, sho
                 </div>
             </div>
 
-            <p className="flex-wrap hidden md:flex max-w-sm text-slate-400">I'm a software engineer and USAF veteran with over a decade of experience working in high-stress high-performance environments. I'm a perpetual learner, always hungry for improvement!</p>
+            <p className="flex-wrap hidden md:flex max-w-sm text-slate-400 text-sm">I'm a software engineer and 7-year United States Air Force veteran who transitioned from defense IT operations to full-stack development. After managing classified networks and coordinating deployment operations for 170+ personnel, I earned my Software Engineering degree from Arizona State University and dove into building modern applications. I specialize in Rust, C#/.NET, React, and TypeScript, with experience spanning NASA mission software, encrypted cloud storage systems, and accessibility-focused kiosk applications deployed with Kubernetes and Docker. I've also published open-source libraries on crates.io, including Logfather (a customizable logging system) and Dekor (a terminal styling library). I bring military-grade discipline to solving complex problems, with a focus on security, performance, and creating tools that empower developers.</p>
 
             {/* Navigation Pane */}
             <ul className={`flex flex-row pb-2 lg:flex-col gap-3 text-lg lg:text-xl justify-around lg:font-bold ${showNavSection ? "" : "invisible"}`}>
@@ -84,18 +84,6 @@ const Header: React.FC<ActiveSectionProps & HeaderProps> = ({ activeSection, sho
 
                 <li className="flex">
                     <hr
-                        className={`w-0 hr-expand my-3 h-1 rounded-lg border-0 ${activeSection === Sections.Projects ? "md:w-24 bg-[#64ffda]" : "md:w-4 bg-white"}`}
-                    />
-                    <a className={`ml-0 md:ml-2 ${activeSection === Sections.Projects ? "text-[#64ffda]" : ""}`}
-                        href="#Projects">Projects
-                        <hr
-                            className={`md:invisible -mt-1 w-0 hr-expand h-0.5 rounded-lg border-0 ${activeSection === Sections.Projects ? "w-full bg-[#64ffda]" : ""}`}
-                        />
-                    </a>
-                </li>
-
-                <li className="flex">
-                    <hr
                         className={`w-0 hr-expand my-3 h-1 rounded-lg border-0 ${activeSection === Sections.Experience ? "md:w-24 bg-[#64ffda]" : "md:w-4 bg-white"}`}
                     />
                     <a className={`ml-0 md:ml-2 ${activeSection === Sections.Experience ? "text-[#64ffda]" : ""}`}
@@ -108,13 +96,12 @@ const Header: React.FC<ActiveSectionProps & HeaderProps> = ({ activeSection, sho
 
                 <li className="flex">
                     <hr
-                        className={`w-0 hr-expand my-3 h-1 rounded-lg border-0 ${activeSection === Sections.Extras ? "md:w-24 bg-[#64ffda]" : "md:w-4 bg-white"}`}
+                        className={`w-0 hr-expand my-3 h-1 rounded-lg border-0 ${activeSection === Sections.Projects ? "md:w-24 bg-[#64ffda]" : "md:w-4 bg-white"}`}
                     />
-                    <a className={`ml-0 md:ml-2 ${activeSection === Sections.Extras ? "text-[#64ffda]" : ""}`}
-                        href="#Extras">
-                        Extras
+                    <a className={`ml-0 md:ml-2 ${activeSection === Sections.Projects ? "text-[#64ffda]" : ""}`}
+                        href="#Projects">Projects
                         <hr
-                            className={`md:invisible -mt-1 w-0 hr-expand h-0.5 rounded-lg border-0 ${activeSection === Sections.Extras ? "w-full bg-[#64ffda]" : ""}`}
+                            className={`md:invisible -mt-1 w-0 hr-expand h-0.5 rounded-lg border-0 ${activeSection === Sections.Projects ? "w-full bg-[#64ffda]" : ""}`}
                         />
                     </a>
                 </li>
