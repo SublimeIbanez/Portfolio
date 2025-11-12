@@ -105,6 +105,18 @@ const Header: React.FC<ActiveSectionProps & HeaderProps> = ({ activeSection, sho
                         />
                     </a>
                 </li>
+
+                <li className="flex">
+                    <hr
+                        className={`w-0 hr-expand my-3 h-1 rounded-lg border-0 ${activeSection === Sections.Projects ? "md:w-24 bg-[#64ffda]" : "md:w-4 bg-white"}`}
+                    />
+                    <a className={`ml-0 md:ml-2 ${activeSection === Sections.Projects ? "text-[#64ffda]" : ""}`}
+                        href="#Projects">Projects
+                        <hr
+                            className={`md:invisible -mt-1 w-0 hr-expand h-0.5 rounded-lg border-0 ${activeSection === Sections.Projects ? "w-full bg-[#64ffda]" : ""}`}
+                        />
+                    </a>
+                </li>
             </ul>
             <div className=""></div>
         </div>
