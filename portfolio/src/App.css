@@ -3,53 +3,55 @@
 @tailwind utilities;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
 }
 
 .App {
-    overflow-y: auto;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .text_entry {
-    font-family: sans-serif;
+  font-family: sans-serif;
 }
 
-.faux-hollows-solutions, .faux-hollows-main {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+.faux-hollows-solutions,
+.faux-hollows-main {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .icon {
-    transition: transform 0.1s ease, color 0.1s ease;
+  transition: transform 0.1s ease, color 0.1s ease;
 }
 
 .icon:hover {
-    transform: scale(1.35);
-    color: #64ffda;
+  transform: scale(1.35);
+  color: #64ffda;
 }
 
 .hr-expand {
-    transition: width 0.2s ease-out, transform 0.1s ease-out;
+  transition: width 0.2s ease-out, transform 0.1s ease-out;
 }
 
 .hr-color {
-    background: #64ffda;
+  background: #64ffda;
 }
 
 @media screen and (min-width: 500px) {
-    body {
-        display: flex;
-        justify-content: center;
-    }
+  body {
+    display: flex;
+    justify-content: center;
+  }
 
-    .faux-hollows-main, .faux-hollows-solutions {
-        overflow-y: auto;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
+  .faux-hollows-main,
+  .faux-hollows-solutions {
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

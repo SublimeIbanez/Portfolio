@@ -1,22 +1,22 @@
-:root {    
-    --bg_color: #171717;
-    --text_color: white;
-    color-scheme: light dark;
-    font-family: "monospace";
-    -ms-overflow-style: thin;
-    scrollbar-width: thin;
+:root {
+  --bg_color: #171717;
+  --text_color: white;
+  color-scheme: light dark;
+  font-family: "monospace";
+  -ms-overflow-style: thin;
+  scrollbar-width: thin;
 }
 
 [data-theme="light"] {
-    --bg_color: #dddddd;
-    --text_color: black;
+  --bg_color: #dddddd;
+  --text_color: black;
 }
 
 body {
-    background-color: var(--bg_color);
-    color: var(--text_color);
+  background-color: var(--bg_color);
+  color: var(--text_color);
 }
 
 .header {
-    background-color: var(--bg_color);
+  background-color: var(--bg_color);
 }
