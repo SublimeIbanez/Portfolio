@@ -1,11 +1,10 @@
-import { ReactNode, useState } from "react";
+import React from "react";
 import { faLink, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Separator from "./Separator";
-
+import { cn } from "../../lib/utils";
 
 export default function Projects() {
-
   return (
     <div className="flex flex-col">
       <h2 className="font-extrabold text-3xl">PROJECTS</h2>
@@ -23,12 +22,19 @@ export default function Projects() {
           {
             site: Site.Website,
             url: "https://missiontopsyche.github.io/tungsten_12a_web_game-se/M.I.S.T/",
-          }
+          },
         ]}
         collapseSection={[
-          { mainText: "Core developer and designer of the game and its system." },
-          { mainText: "Focused on backend functionality and developer tooling." },
-          { mainText: "Created core functionality for many systems in widespread use throughout the game." },
+          {
+            mainText: "Core developer and designer of the game and its system.",
+          },
+          {
+            mainText: "Focused on backend functionality and developer tooling.",
+          },
+          {
+            mainText:
+              "Created core functionality for many systems in widespread use throughout the game.",
+          },
           { mainText: "Team leader and Lead Developer." },
         ]}
       />
@@ -37,7 +43,10 @@ export default function Projects() {
       <Project
         title="Logfather"
         role="Creator"
-        body="Highly customizable, lightweight logging system for rust applications used in development and deployment environments - configurable for terminal and file output."
+        body={
+          "Highly customizable, lightweight logging system for rust applications used" +
+          " in development and deployment environments - configurable for terminal and file output."
+        }
         skills={["Rust"]}
         links={[
           {
@@ -50,11 +59,20 @@ export default function Projects() {
           },
         ]}
         collapseSection={[
-          { mainText: "Developed the library for logging information on both terminal and file outputs." },
-          { mainText: "Ensures the core focus was customizability - almost any aspect can easily be customized." },
+          {
+            mainText:
+              "Developed the library for logging information on both terminal and file outputs.",
+          },
+          {
+            mainText:
+              "Ensures the core focus was customizability - almost any aspect can easily be customized.",
+          },
           { mainText: "Ensures thread safety." },
           { mainText: "Comprehensively documented." },
-          { mainText: "Implemented features tailored to specifications requested by corporate clients." },
+          {
+            mainText:
+              "Implemented features tailored to specifications requested by corporate clients.",
+          },
         ]}
       />
 
@@ -75,7 +93,10 @@ export default function Projects() {
           },
         ]}
         collapseSection={[
-          { mainText: "Developed the library for terminal outputs with an intention to provide a lightweight and easy-to-use tool for developers." },
+          {
+            mainText:
+              "A lightweight and easy-to-use library for terminal development",
+          },
           { mainText: "Comprehensively documented." },
         ]}
       />
@@ -84,8 +105,20 @@ export default function Projects() {
       <Project
         title="ByteCrypt"
         role="Core Contributor"
-        body="Lightweight application that allows users to encrypt their local data and upload it to and through various cloud services."
-        skills={["Rust", "SQL", "Cryptography", "Go", "React", "Typescript", "REST",]}
+        body={
+          "A lightweight application that allows users to encrypt their local data and upload" +
+          " it to and through various cloud services."
+        }
+        skills={[
+          "Rust",
+          "OAuth",
+          "SQL",
+          "Cryptography",
+          "Go",
+          "React",
+          "Typescript",
+          "REST",
+        ]}
         links={[
           {
             site: Site.GitHub,
@@ -97,38 +130,44 @@ export default function Projects() {
           },
         ]}
         collapseSection={[
-          { mainText: "Co-lead on overall design and architecture of the program." },
+          {
+            mainText:
+              "Co-lead on overall design and architecture of the program.",
+          },
           {
             mainText: "Major driver in core feature design including:",
             innerText: [
               { mainText: "OAuth integration and verification." },
               { mainText: "Custom configuration implementation." },
               { mainText: "Centralized design logic flow." },
-              { mainText: "Database configuration and management." }
-            ]
+              { mainText: "Database configuration and management." },
+            ],
           },
-          { mainText: "Created custom library for performance testing encryption on varying file sizes and types." },
+          {
+            mainText:
+              "Created custom library for performance testing encryption on varying file sizes and types.",
+          },
         ]}
       />
     </div>
-  )
+  );
 }
 
 type ProjectProps = {
   title: string;
   role: string;
-  body: ReactNode;
+  body: React.ReactNode;
   bullets?: string[];
   img?: string;
   skills?: string[];
   links?: LinkProps[];
   collapseSection?: CollapseProps[];
-}
+};
 
 type CollapseProps = {
   mainText?: string;
   innerText?: CollapseProps[];
-}
+};
 
 const Collapsed: React.FC<CollapseProps> = ({ mainText, innerText }) => {
   return (
@@ -138,58 +177,75 @@ const Collapsed: React.FC<CollapseProps> = ({ mainText, innerText }) => {
         <Collapsed key={index} {...item} />
       ))}
     </ul>
-  )
-}
+  );
+};
 
-const Project: React.FC<ProjectProps & CollapseProps> = ({ title, role, body, skills, links, collapseSection }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Project: React.FC<ProjectProps & CollapseProps> = ({
+  title,
+  role,
+  body,
+  skills,
+  links,
+  collapseSection,
+}) => {
+  const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div onClick={() => setIsOpen(!isOpen)}
-      className={`project p-3 transform select-none duration-300 ease-in-out hover:-translate-y-1.5 hover:bg-sky-100/5 rounded-2xl cursor-pointer`}>
+    <div
+      onClick={() => setIsOpen(!isOpen)}
+      className={cn(
+        "project p-3 transform select-none duration-300 ease-in-out",
+        "hover:-translate-y-1.5 hover:bg-sky-100/5 rounded-2xl cursor-pointer",
+      )}
+    >
       <div className="flex gap-3 items-center">
         <h3 className="text-2xl font-extrabold text-sky-600">{title}</h3>
-        {
-          links?.map((link) => {
-            return (Link(link))
-          })
-        }
+        {links?.map((link) => {
+          return Link(link);
+        })}
         <FontAwesomeIcon
           icon={faChevronDown}
-          className={`ml-auto text-slate-400 transition-transform duration-300 ease-in-out ${isOpen ? "rotate-180" : "rotate-0"}`}
+          className={cn(
+            "ml-auto text-slate-400 transition-transform duration-300 ease-in-out",
+            isOpen ? "rotate-0" : "rotate-90",
+          )}
         />
       </div>
-      <h5 className="text-m dark:text-neutral-400 text-neutral-700 font-bold">{role}</h5>
+      <h5 className="text-m dark:text-neutral-400 text-neutral-700 font-bold">
+        {role}
+      </h5>
       <p className="text_entry">{body}</p>
-      <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0"}`}>
+      <div
+        className={cn(
+          "overflow-hidden transition-all duration-500 ease-in-out",
+          isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0",
+        )}
+      >
         {collapseSection?.map((item, index) => (
           <Collapsed key={index} {...item} />
         ))}
       </div>
       {SkillsList({ skills })}
     </div>
-  )
-}
+  );
+};
 
 type SkillProps = {
   skills?: string[];
-}
-
+};
 
 function SkillsList({ skills }: SkillProps) {
   return (
     <div className="flex flex-wrap">
-      {
-        skills?.map((skill) => {
-          return (
-            <span className="rounded-full mr-1 pl-2 pr-2 text-sm bg-emerald-900 bg-opacity-70 text-green-200 mt-1">
-              {skill}
-            </span>
-          )
-        })
-      }
+      {skills?.map((skill) => {
+        return (
+          <span className="rounded-full mr-1 pl-2 pr-2 text-sm bg-emerald-900 bg-opacity-70 text-green-200 mt-1">
+            {skill}
+          </span>
+        );
+      })}
     </div>
-  )
+  );
 }
 
 enum Site {
@@ -202,7 +258,7 @@ enum Site {
 type LinkProps = {
   site?: Site;
   url?: string;
-}
+};
 
 function Link({ site, url }: LinkProps) {
   return (
@@ -210,7 +266,5 @@ function Link({ site, url }: LinkProps) {
       <FontAwesomeIcon icon={faLink} className="mt-1" />
       <p className="text-sm mt-1">{site?.toString()}</p>
     </a>
-  )
+  );
 }
-
-

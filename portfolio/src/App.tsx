@@ -1,64 +1,37 @@
-import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import "./App.css";
-
-import { Sections } from "./components/Content/ScrollContext";
+import {
+  Section,
+  useSectionVisibility,
+} from "./components/Content/ScrollContext";
 import Header from "./components/Content/Header";
 import Content from "./components/Content/Content";
 
+import "./App.css";
 
 const App = () => {
-  const [activeSection, setActiveSection] = useState(Sections.About);
-
-  const handleScroll = () => {
-    const contentDiv = document.querySelector(".App");
-    const scrollPosition = contentDiv!.scrollTop / 2;
-    const sections = [Sections.About, Sections.Projects, Sections.Experience]
-
-    sections.forEach(section => {
-      const element = document.getElementById(section);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        const top = rect.top;
-        const bottom = rect.bottom;
-
-
-        if (top <= scrollPosition! && bottom >= scrollPosition!) {
-          setActiveSection!(section);
-        }
-      }
-    });
-  }
-
-  useEffect(() => {
-    const contentDiv = document.querySelector(".App");
-    contentDiv?.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { sectionInfoMap, setSectionRef } = useSectionVisibility([
+    Section.About,
+    Section.Projects,
+    Section.Experience,
+  ]);
 
   return (
     <BrowserRouter>
       <div className="App flex flex-col m-4 text-lg lg:flex-row justify-center">
         <Routes>
-          <Route path="/" element={
-            <>
-              <Header activeSection={activeSection} showNavSection={true} />
-              <Content />
-            </>
-          } />
-          <Route path="/FauxHollows" element={
-            <>
-              {window.scrollTo(0, 0)}
-              <Header showNavSection={false} />
-            </>
-          } />
+          <Route
+            path="/"
+            element={
+              <>
+                <Header sectionInfoMap={sectionInfoMap} showNavSection={true} />
+                <Content setSectionRef={setSectionRef} />
+              </>
+            }
+          />
         </Routes>
       </div>
     </BrowserRouter>
   );
-}
+};
+
 export default App;
-
-
