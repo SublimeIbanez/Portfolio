@@ -199,17 +199,17 @@ const Project: React.FC<ProjectProps & CollapseProps> = ({
       )}
     >
       <div className="flex gap-3 items-center">
+        <FontAwesomeIcon
+          icon={faChevronDown}
+          className={cn(
+            "text-slate-400 transition-transform duration-300 ease-in-out",
+            isOpen ? "rotate-0" : "-rotate-90",
+          )}
+        />
         <h3 className="text-2xl font-extrabold text-sky-600">{title}</h3>
         {links?.map((link) => {
           return Link(link);
         })}
-        <FontAwesomeIcon
-          icon={faChevronDown}
-          className={cn(
-            "ml-auto text-slate-400 transition-transform duration-300 ease-in-out",
-            isOpen ? "rotate-0" : "rotate-90",
-          )}
-        />
       </div>
       <h5 className="text-m dark:text-neutral-400 text-neutral-700 font-bold">
         {role}
@@ -217,13 +217,15 @@ const Project: React.FC<ProjectProps & CollapseProps> = ({
       <p className="text_entry">{body}</p>
       <div
         className={cn(
-          "overflow-hidden transition-all duration-500 ease-in-out",
-          isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0",
+          "grid transition-all duration-500 ease-in-out",
+          isOpen ? "grid-rows-[1fr] opacity-100 mt-2" : "grid-rows-[0fr] opacity-0",
         )}
       >
-        {collapseSection?.map((item, index) => (
-          <Collapsed key={index} {...item} />
-        ))}
+        <div className="overflow-hidden">
+          {collapseSection?.map((item, index) => (
+            <Collapsed key={index} {...item} />
+          ))}
+        </div>
       </div>
       {SkillsList({ skills })}
     </div>

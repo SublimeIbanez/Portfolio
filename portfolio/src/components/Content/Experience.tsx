@@ -184,17 +184,17 @@ function ExperienceEntry({
       onClick={() => setIsOpen(!isOpen)}
     >
       <div className="flex justify-between items-center uppercase font-extrabold text-sky-600 text-2xl">
-        <h3>{title}</h3>
         <div className="flex items-center gap-3">
-          <h4 className="text-sky-950 dark:text-sky-300">{company}</h4>
           <FontAwesomeIcon
             icon={faChevronDown}
             className={cn(
               "text-slate-400 transition-transform duration-300 ease-in-out",
-              isOpen ? "rotate-0" : "rotate-90",
+              isOpen ? "rotate-0" : "-rotate-90",
             )}
           />
+          <h3>{title}</h3>
         </div>
+        <h4 className="text-sky-950 dark:text-sky-300">{company}</h4>
       </div>
       <h4 className="uppercase font-extrabold text-neutral-500 text-xl flex justify-between w-full">
         <div>{selectedExperienceType}</div>
@@ -205,19 +205,21 @@ function ExperienceEntry({
       <p className="text_entry mt-2">{summary}</p>
       <div
         className={cn(
-          "overflow-hidden transition-all duration-500 ease-in-out",
-          isOpen ? "max-h-96 opacity-100 mt-2" : "max-h-0 opacity-0",
+          "grid transition-all duration-500 ease-in-out",
+          isOpen ? "grid-rows-[1fr] opacity-100 mt-2" : "grid-rows-[0fr] opacity-0",
         )}
       >
-        <ul className="ml-4 list-disc text-md">
-          {bullets.map((bullet, index) => {
-            return (
-              <li key={index} className="text_entry mb-1 text-teal-500">
-                {bullet}
-              </li>
-            );
-          })}
-        </ul>
+        <div className="overflow-hidden">
+          <ul className="ml-4 list-disc text-md">
+            {bullets.map((bullet, index) => {
+              return (
+                <li key={index} className="text_entry mb-1 text-teal-500">
+                  {bullet}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </div>
   );
